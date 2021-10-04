@@ -27,4 +27,9 @@ public class CountryController {
         return countryService.getAll();
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<Country> get(@PathVariable("id") long id){
+        return new ResponseEntity<Country>(countryService.get(id), HttpStatus.OK);
+    }
+
 }
