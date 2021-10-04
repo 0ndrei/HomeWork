@@ -1,5 +1,6 @@
 package com.example.HomeWork.service.impl;
 
+import com.example.HomeWork.exception.ResourceNotFoundException;
 import com.example.HomeWork.model.Country;
 import com.example.HomeWork.repository.CountryRepository;
 import com.example.HomeWork.service.CountryService;
@@ -27,7 +28,7 @@ public class CountryServiceImpl  implements CountryService {
 
     @Override
     public Country get(long id) {
-        return null;
+        return countryRepository.findById(id).orElseThrow( () -> new ResourceNotFoundException("Country", "id", id));
     }
 
     @Override
