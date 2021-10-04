@@ -1,5 +1,6 @@
 package com.example.HomeWork.service.impl;
 
+import com.example.HomeWork.exception.ResourceNotFoundException;
 import com.example.HomeWork.model.City;
 import com.example.HomeWork.repository.CityRepository;
 import com.example.HomeWork.service.CityService;
@@ -26,7 +27,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public City get(long id) {
-        return null;
+        return cityRepository.findById(id).orElseThrow( () -> new ResourceNotFoundException("Country", "id", id));
     }
 
     @Override

@@ -27,4 +27,9 @@ public class CityController {
     public List<City> get(){
         return cityService.getAll();
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<City> get(@PathVariable("id") long id){
+        return new ResponseEntity<City>(cityService.get(id), HttpStatus.OK);
+    }
 }
