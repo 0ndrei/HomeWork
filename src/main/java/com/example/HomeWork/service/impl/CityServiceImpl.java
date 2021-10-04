@@ -21,7 +21,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public List<City> getAll() {
-        return null;
+        return cityRepository.findAll();
     }
 
     @Override
