@@ -5,6 +5,8 @@ import com.example.HomeWork.repository.CountryRepository;
 import com.example.HomeWork.service.CountryService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CountryServiceImpl  implements CountryService {
     CountryRepository countryRepository;
@@ -19,4 +21,22 @@ public class CountryServiceImpl  implements CountryService {
         return countryRepository.save(country);
     }
 
+    @Override
+    public List<Country> getAll() {
+        return countryRepository.findAll(); }
+
+    @Override
+    public Country get(long id) {
+        return null;
+    }
+
+    @Override
+    public Country updateCountry(Country country, long id) {
+        return null;
+    }
+
+    @Override
+    public void delete(long id) {
+
+    }
 }
